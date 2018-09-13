@@ -8,5 +8,7 @@ def pythag_ther(a,b):
     ans = sqrt(sums)
     
     return "{:.2f}".format(ans)
-    
-pythag_ther(3,4)
+
+def main():    
+    print(pythag_ther(3,4))
+main()
