@@ -9,6 +9,9 @@ def pythag_ther(a,b):
     
     return "{:.2f}".format(ans)
 
+def slope(x1,y1,x2,y2):
+    pass
+
 def main():    
     print(pythag_ther(3,4))
 main()
