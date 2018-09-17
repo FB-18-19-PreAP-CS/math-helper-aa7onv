@@ -1,7 +1,14 @@
 from math import *
 
 def pythag_ther(a,b):
-    '''returns the hypotnuse of a right triangle'''
+    '''returns the hypotnuse of a right triangle
+    >>> pythag_ther(3,4)
+    5.00
+    
+    
+    
+    
+    '''
     a = a * a
     b = b * b
     sums = a + b
@@ -22,13 +29,10 @@ def arithmetic(a1,n,d):
     return "{:.2f}".format(ans)
 
 def sum_geometric(a,r,n):
-    '''returns the sum of a geometric sequence'''
-    pass
+    '''returns the sum of a geometric sequence'''   
+    pass    
     
-    
-
-def main():    
-    print(pythag_ther(3,4))
-    print(arithmetic(2,10,2))
-    
-main()
+if __name__ =="__main__":
+    import doctest
+    doctest.testmod()
+#main()
