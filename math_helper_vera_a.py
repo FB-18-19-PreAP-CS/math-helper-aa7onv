@@ -13,7 +13,6 @@ def pythag_ther(a,b):
     >>> pythag_ther(-2,-2)
     2.83
     
-    
     '''
     a = a * a
     b = b * b
@@ -25,40 +24,79 @@ def pythag_ther(a,b):
 
 def slope(x1,y1,x2,y2):
     '''returns the slope of 2 points
+
     >>> slope(0,1,0,3)
     Traceback (most recent call last):
         ...
     ValueError: denominator cannot equal 0
     >>> slope(1,2,3,4)
     1.0
-    
-    
+    >>> slope(5,7,6,1)
+    -6.0
+    >>> slope(3,-9,-2,4)
+    -2.6
+    >>> slope(-2,-2,13,12)
+    0.93
     
     '''
     yans = (y1-y2)
     xans =(x1-x2)
-    #if xans == 0:
-      #  return ValueError:
+    if xans == 0:
+        raise ValueError("denominator cannot equal 0")
+    ans = yans / xans
     ans = round(ans,2)
     
     return ans
 
-def arithmetic(a1,n,d):
-    '''returns last number in an arithmetic sequence'''
+def arithmetic(a1,d,n):
+    '''returns last number in an arithmetic sequence
+    >>> arithmetic(3,0,4)
+    3
+    >>> arithmetic(12,4,6)
+    32
+    >>> arithmetic(1.1,-2,6)
+    -8.9
+    >>> arithmetic(1,7,0)
+    Traceback (most recent call last):
+        ...
+    ValueError: number of terms cannot equal 0
+    >>> arithmetic(12,5,23)
+    122
+
+
+
+
+'''
+    if n == 0:
+        raise ValueError("number of terms cannot equal 0")
     ans = a1+(d*(n-1))
-    ans = round(ans,2)
+    ans = round(ans,4)
     
     return ans
 
 def sum_geometric(a,r,n):
-    '''returns the sum of a geometric sequence'''   
-    pass
+    '''returns the sum of a geometric sequence
+    >>> sum_geometric(1,2,8)
+    255.0
+
+
+
+
+
+'''   
+    if r == 1:
+        raise ValueError("'r' cannot be 1")
+    num = a*(1 - (r**n))
+    den = 1 - r
+    ans = num / den
+    ans = round(ans,2)
+    
+    return ans
 
 def eccentricity_ellipse(a,b):
     pass
 
-def velocity():
-    pass
+
     
 if __name__ =="__main__":
     import doctest
