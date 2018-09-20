@@ -29,8 +29,8 @@ def slope(x1,y1,x2,y2):
     Traceback (most recent call last):
         ...
     ValueError: denominator cannot equal 0
-    >>> slope(1,2,3,4)
-    1.0
+    >>> slope(1,2,4,2)
+    0.0
     >>> slope(5,7,6,1)
     -6.0
     >>> slope(3,-9,-2,4)
@@ -44,6 +44,8 @@ def slope(x1,y1,x2,y2):
     if xans == 0:
         raise ValueError("denominator cannot equal 0")
     ans = yans / xans
+    if ans == -0.0:
+        ans = 0.0
     ans = round(ans,2)
     
     return ans
@@ -62,10 +64,6 @@ def arithmetic(a1,d,n):
     ValueError: number of terms cannot equal 0
     >>> arithmetic(12,5,23)
     122
-
-
-
-
 '''
     if n == 0:
         raise ValueError("number of terms cannot equal 0")
@@ -78,17 +76,25 @@ def sum_geometric(a,r,n):
     '''returns the sum of a geometric sequence
     >>> sum_geometric(1,2,8)
     255.0
-
-
-
-
-
+    >>> sum_geometric(-2.1,1.1,4)
+    -9.75
+    >>> sum_geometric(3,0,3)
+    3.0
+    >>> sum_geometric(1,3,0)
+    0.0
+    >>> sum_geometric(1,1,1)
+    Traceback (most recent call last):
+        ...
+    ValueError: 'r' cannot be 1
+    
 '''   
     if r == 1:
         raise ValueError("'r' cannot be 1")
     num = a*(1 - (r**n))
     den = 1 - r
     ans = num / den
+    if ans == -0.0:
+        ans = 0.0
     ans = round(ans,2)
     
     return ans
