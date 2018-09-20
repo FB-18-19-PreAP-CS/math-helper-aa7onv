@@ -1,5 +1,26 @@
 from math import *
 
+def main():
+    print('''W E L C O M E  T O
+MATH HELPER''')
+    print('. . . . . . . . . ')
+    print('Please select a formuala by typing its number')
+    a = int(input('''(1) Pythagorean Theorem
+(2) Slope
+(3) Arithmetic Sequence
+(4) Sum of Geometric Sequence
+(5) Eccentricity of Ellipse
+>  '''))
+    while True:
+        if a == 1 or 2 or 3 or 4 or 5:
+            print("ERROR: Please input a valid number")
+            a = input('> ')
+        else:
+            break
+
+
+
+
 def pythag_ther(a,b):
     '''returns the hypotnuse of a right triangle
     >>> pythag_ther(3,4)
@@ -86,7 +107,6 @@ def sum_geometric(a,r,n):
     Traceback (most recent call last):
         ...
     ValueError: 'r' cannot be 1
-    
 '''   
     if r == 1:
         raise ValueError("'r' cannot be 1")
@@ -100,11 +120,14 @@ def sum_geometric(a,r,n):
     return ans
 
 def eccentricity_ellipse(a,b):
-    pass
+    e = ((b / a)**2)
+    e = sqrt((1-e))
+    e = round(e,2)
+    return e
 
 
     
 if __name__ =="__main__":
-    import doctest
-    doctest.testmod()
-#main()
+    #import doctest
+    #doctest.testmod()
+    main()
