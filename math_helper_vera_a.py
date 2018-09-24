@@ -1,28 +1,34 @@
 from math import *
 
 def main():
-    ''' The UI for math helper
-    '''
+    
+    '''The UI for math helper
+'''
     print('''W E L C O M E  T O
 MATH HELPER''')
     print('. . . . . . . . . . .')
-    print('Please select a formula by typing its number')
-    print('''(1) Pythagorean Theorem
-(2) Slope
-(3) Arithmetic Sequence
-(4) Sum of Geometric Sequence
-(5) Area of a Sector''')
-    
-    
-    choices = {1,2,3,4,5}
     while True:
+        print('Please select a formula by typing its number')
+        print('''(1) Pythagorean Theorem
+(2) Slope
+(3) Arithmetic Sequence (last term)
+(4) Sum of Geometric Sequence
+(5) Area of a Sector
+(6) Quit''')
+        print('=========================')
+        
+        
+        choices = {1,2,3,4,5,6}
+        
         user = int(input('> '))
         if user in choices:
             if user == 1:
+                print('+ Pythagorean Theorem Selected +')
                 a = float(input('Enter length of side 1: '))
                 b = float(input('Enter length of side 2: '))
                 print('The hypotenuse is {}'.format(pythag_ther(a,b)))
             if user == 2:
+                print('+ Slope Selected +')
                 x1 = float(input('Enter first x-coordinate: '))
                 y1 = float(input('Enter first y-coordinate: '))
                 x2 = float(input('Enter second x-coordinate: '))
@@ -30,20 +36,27 @@ MATH HELPER''')
                 print('The slope is {}'.format(slope(x1,y1,x2,y2)))
                            
             if user == 3:
+                print('+ Arithmetic Sequence (last term) Selected +')
                 a1 = float(input('Enter the first term in the sequence: '))
                 d = float(input('Enter the common diffence: '))
                 n = float(input('Enter the nth term you want: '))
                 print('The last term is {}'.format(arithmetic(a1,d,n)))
                               
             if user == 4:
+                print('+ Geometric Sum Selected +')
                 a = float(input('Enter the first term in the sequence: '))
                 r = float(input('Enter the common ratio: '))
                 n = float(input('Enter the number of terms: '))
                 print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
             if user == 5:
+                print('+ Area of a Sector Selected +')
                 r = float(input('Enter the radius of the circle: '))
                 a = float(input('Enter the angle in degrees: '))
                 print('The area of the sector is {}'.format(area_of_sector(r,a)))
+            
+            if user == 6:
+                print('Thank you for using Math Helper... Goodbye')
+                break
 
                 
         else:
@@ -177,6 +190,4 @@ if __name__ == "__main__":
     #import doctest
     #doctest.testmod()
     main()
-
-
 
