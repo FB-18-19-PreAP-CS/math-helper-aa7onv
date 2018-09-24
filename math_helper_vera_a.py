@@ -41,11 +41,13 @@ MATH HELPER''')
                 n = float(input('Enter the number of terms: '))
                 print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
             if user == 5:
-                pass
+                r = float(input('Enter the radius of the circle: '))
+                a = float(input('Enter the angle in degrees: '))
+                print('The area of the sector is {}'.format(area_of_sector(r,a)))
 
                 
-       # else:
-        #    print('Please enter a number 1->5')
+        else:
+            print('Please enter a number 1->5')
                     
     
       
@@ -64,8 +66,7 @@ def pythag_ther(a,b):
     >>> pythag_ther(1.1, 2.6)
     2.82
     >>> pythag_ther(-2,-2)
-    2.83
-    
+    2.83    
     '''
     if a == 0 or b == 0:
         raise ValueError("Sides cannot have a length of 0")
@@ -167,11 +168,10 @@ def area_of_sector(r,a):
     251.33
     
 '''
-    rad = (a * 3.1415926)/180
-    ans = .5(r**2)*ans
+    a = a * 3.1415926 / 180
+    ans = .5*(r*r) * a
     
-    return round(ans,2)
-    
+    return round(ans,2)    
         
 if __name__ == "__main__":
     #import doctest
