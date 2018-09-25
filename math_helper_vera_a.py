@@ -1,23 +1,36 @@
 from math import *
+from time import *
 
-def main():
-    
-    '''The UI for math helper
-'''
-    print('''W E L C O M E  T O
+
+print('''W E L C O M E  T O
 MATH HELPER''')
-    print('. . . . . . . . . . .')
-    while True:
-        print('Please select a formula by typing its number')
-        print('''(1) Pythagorean Theorem
+print('. . . . . . . . . . .')
+
+def rerun():
+            #either runs the program again or breaks
+    print('Would you like to use another formula?')
+    ans = input("Type [y] for yes or [n] for no: ")
+    if ans.upper() == 'Y':
+        main()
+    elif ans.upper() == 'N':
+        print('Thank you for using Math Helper... Goodbye')
+        exit()
+    else:
+        print('Invalid Input')
+        rerun()
+
+def main():    
+    '''The UI for math helper
+'''    
+    print('Please select a formula by typing its number')
+    print('''(1) Pythagorean Theorem
 (2) Slope
 (3) Arithmetic Sequence (last term)
 (4) Sum of Geometric Sequence
 (5) Area of a Sector
 (6) Quit''')
-        print('=========================')
-        
-        
+    print('=========================')
+    while True:        
         choices = {1,2,3,4,5,6}
         
         user = int(input('> '))
@@ -26,39 +39,65 @@ MATH HELPER''')
                 print('+ Pythagorean Theorem Selected +')
                 a = float(input('Enter length of side 1: '))
                 b = float(input('Enter length of side 2: '))
+                print()
                 print('The hypotenuse is {}'.format(pythag_ther(a,b)))
+                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                sleep(1.5)
+                rerun()
+                main()
+                             
             if user == 2:
                 print('+ Slope Selected +')
                 x1 = float(input('Enter first x-coordinate: '))
                 y1 = float(input('Enter first y-coordinate: '))
                 x2 = float(input('Enter second x-coordinate: '))
                 y2 = float(input('Enter second y-coordinate: '))
+                print()
                 print('The slope is {}'.format(slope(x1,y1,x2,y2)))
-                           
+                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                sleep(1.5)
+                rerun()     
+                main()
+                                          
             if user == 3:
                 print('+ Arithmetic Sequence (last term) Selected +')
                 a1 = float(input('Enter the first term in the sequence: '))
                 d = float(input('Enter the common diffence: '))
                 n = float(input('Enter the nth term you want: '))
+                print()
                 print('The last term is {}'.format(arithmetic(a1,d,n)))
-                              
+                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                sleep(1.5)
+                rerun()
+                main()
+                                             
             if user == 4:
                 print('+ Geometric Sum Selected +')
                 a = float(input('Enter the first term in the sequence: '))
                 r = float(input('Enter the common ratio: '))
                 n = float(input('Enter the number of terms: '))
+                print()
                 print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
+                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                sleep(1.5)
+                rerun() 
+                main()
+                
             if user == 5:
                 print('+ Area of a Sector Selected +')
                 r = float(input('Enter the radius of the circle: '))
                 a = float(input('Enter the angle in degrees: '))
+                print()
                 print('The area of the sector is {}'.format(area_of_sector(r,a)))
-            
+                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                sleep(1.5)
+                rerun()
+                main()
+                            
             if user == 6:
                 print('Thank you for using Math Helper... Goodbye')
                 break
-
-                
+                            
         else:
             print('Please enter a number 1->5')
                     
@@ -175,14 +214,20 @@ def area_of_sector(r,a):
     0.0
     >>> area_of_sector(14,0)
     0.0
-    >>> area_of_sector(12,131)
-    164.62
+    >>> area_of_sector(-12,131)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot have a negative input
     >>> area_of_sector(20,72)
     251.33
     
 '''
+    if r < 0 or a < 0:
+        raise ValueError("cannot have a negative input")
+
     a = a * 3.1415926 / 180
     ans = .5*(r*r) * a
+    
     
     return round(ans,2)    
         
