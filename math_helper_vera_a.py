@@ -11,6 +11,7 @@ def rerun():
     print('Would you like to use another formula?')
     ans = input("Type [y] for yes or [n] for no: ")
     if ans.upper() == 'Y':
+        print()
         main()
     elif ans.upper() == 'N':
         print('Thank you for using Math Helper... Goodbye')
@@ -30,77 +31,82 @@ def main():
 (5) Area of a Sector
 (6) Quit''')
     print('=========================')
-    while True:        
-        choices = {1,2,3,4,5,6}
-        
-        user = int(input('> '))
-        if user in choices:
-            if user == 1:
-                print('+ Pythagorean Theorem Selected +')
-                a = float(input('Enter length of side 1: '))
-                b = float(input('Enter length of side 2: '))
-                print()
-                print('The hypotenuse is {}'.format(pythag_ther(a,b)))
-                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                sleep(1.5)
-                rerun()
-                main()
-                             
-            if user == 2:
-                print('+ Slope Selected +')
-                x1 = float(input('Enter first x-coordinate: '))
-                y1 = float(input('Enter first y-coordinate: '))
-                x2 = float(input('Enter second x-coordinate: '))
-                y2 = float(input('Enter second y-coordinate: '))
-                print()
-                print('The slope is {}'.format(slope(x1,y1,x2,y2)))
-                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                sleep(1.5)
-                rerun()     
-                main()
-                                          
-            if user == 3:
-                print('+ Arithmetic Sequence (last term) Selected +')
-                a1 = float(input('Enter the first term in the sequence: '))
-                d = float(input('Enter the common diffence: '))
-                n = float(input('Enter the nth term you want: '))
-                print()
-                print('The last term is {}'.format(arithmetic(a1,d,n)))
-                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                sleep(1.5)
-                rerun()
-                main()
-                                             
-            if user == 4:
-                print('+ Geometric Sum Selected +')
-                a = float(input('Enter the first term in the sequence: '))
-                r = float(input('Enter the common ratio: '))
-                n = float(input('Enter the number of terms: '))
-                print()
-                print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
-                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                sleep(1.5)
-                rerun() 
-                main()
-                
-            if user == 5:
-                print('+ Area of a Sector Selected +')
-                r = float(input('Enter the radius of the circle: '))
-                a = float(input('Enter the angle in degrees: '))
-                print()
-                print('The area of the sector is {}'.format(area_of_sector(r,a)))
-                print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                sleep(1.5)
-                rerun()
-                main()
-                            
-            if user == 6:
-                print('Thank you for using Math Helper... Goodbye')
-                break
-                            
-        else:
-            print('Please enter a number 1->5')
+    while True:
+        try:
+            choices = {1,2,3,4,5,6}
+            
+            user = int(input('> '))
+            if user in choices:
+                if user == 1:
+                    print('+ Pythagorean Theorem Selected +')
+                    a = float(input('Enter length of side 1: '))
+                    b = float(input('Enter length of side 2: '))
+                    print()
+                    print('The hypotenuse is {}'.format(pythag_ther(a,b)))
+                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                    sleep(1.5)
+                    rerun()
+                    main()
+                                 
+                if user == 2:
+                    print('+ Slope Selected +')
+                    x1 = float(input('Enter first x-coordinate: '))
+                    y1 = float(input('Enter first y-coordinate: '))
+                    x2 = float(input('Enter second x-coordinate: '))
+                    y2 = float(input('Enter second y-coordinate: '))
+                    print()
+                    print('The slope is {}'.format(slope(x1,y1,x2,y2)))
+                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                    sleep(1.5)
+                    rerun()     
+                    main()
+                                              
+                if user == 3:
+                    print('+ Arithmetic Sequence (last term) Selected +')
+                    a1 = float(input('Enter the first term in the sequence: '))
+                    d = float(input('Enter the common diffence: '))
+                    n = float(input('Enter the nth term you want: '))
+                    print()
+                    print('The last term is {}'.format(arithmetic(a1,d,n)))
+                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                    sleep(1.5)
+                    rerun()
+                    main()
+                                                 
+                if user == 4:
+                    print('+ Geometric Sum Selected +')
+                    a = float(input('Enter the first term in the sequence: '))
+                    r = float(input('Enter the common ratio: '))
+                    n = float(input('Enter the number of terms: '))
+                    print()
+                    print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
+                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                    sleep(1.5)
+                    rerun() 
+                    main()
                     
+                if user == 5:
+                    print('+ Area of a Sector Selected +')
+                    r = float(input('Enter the radius of the circle: '))
+                    a = float(input('Enter the angle in degrees: '))
+                    print()
+                    print('The area of the sector is {}'.format(area_of_sector(r,a)))
+                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                    sleep(1.5)
+                    rerun()
+                    main()
+                                
+                if user == 6:
+                    print('Thank you for using Math Helper... Goodbye')
+                    break
+                            
+            else:
+                print('Please enter a number 1->5')
+        except Exception as e:
+            print('▀■' *24 )
+            print('Invalid Input: ' + str(e))
+            print('■▀' *24 )
+            main() 
     
       
 
@@ -118,7 +124,7 @@ def pythag_ther(a,b):
     >>> pythag_ther(1.1, 2.6)
     2.82
     >>> pythag_ther(-2,-2)
-    2.83    
+    2.83   
     '''
     if a == 0 or b == 0:
         raise ValueError("Sides cannot have a length of 0")
@@ -144,7 +150,7 @@ def slope(x1,y1,x2,y2):
     >>> slope(3,-9,-2,4)
     -2.6
     >>> slope(-2,-2,13,12)
-    0.93
+    0.933
     
     '''
     yans = (y1-y2)
@@ -154,7 +160,7 @@ def slope(x1,y1,x2,y2):
     ans = yans / xans
     if ans == -0.0:
         ans = 0.0
-    ans = round(ans,2)
+    ans = round(ans,3)
     
     return ans
 
@@ -232,7 +238,9 @@ def area_of_sector(r,a):
     return round(ans,2)    
         
 if __name__ == "__main__":
-    #import doctest
-    #doctest.testmod()
-    main()
+    import doctest
+    doctest.testmod()
+    #main()
+
+
 
