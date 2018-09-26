@@ -124,7 +124,7 @@ def pythag_ther(a,b):
     >>> pythag_ther(1.1, 2.6)
     2.82
     >>> pythag_ther(-2,-2)
-    2.83   
+    2.83
     '''
     if a == 0 or b == 0:
         raise ValueError("Sides cannot have a length of 0")
@@ -215,7 +215,7 @@ def sum_geometric(a,r,n):
 def area_of_sector(r,a):
     '''calculates the area of a sector, and changes degrees to radian
     >>> area_of_sector(75,135)
-    6626.25
+    6626.8
     >>> area_of_sector(0,87)
     0.0
     >>> area_of_sector(14,0)
@@ -238,9 +238,9 @@ def area_of_sector(r,a):
     return round(ans,2)    
         
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
-    #main()
+    #import doctest
+    #doctest.testmod()
+    main()
 
 
 
