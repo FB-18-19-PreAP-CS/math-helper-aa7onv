@@ -98,7 +98,7 @@ def main():
                                 
                 if user == 6:
                     print('Thank you for using Math Helper... Goodbye')
-                    break
+                    return
                             
             else:
                 print('Please enter a number 1->5')
@@ -238,9 +238,9 @@ def area_of_sector(r,a):
     return round(ans,2)    
         
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
-    #main()
+    #import doctest
+    #doctest.testmod()
+    main()
 
 
 
