@@ -132,7 +132,7 @@ def main():
                     break
                             
             else:
-                print('Please enter a number 1->5')
+                print('Please enter a number 1->6')
         except Exception as e:
             print('▀■' *24 )
             print('Invalid Input: ' + str(e))
