@@ -50,8 +50,8 @@ def main():
                             sleep(1.5)
                             rerun()
                             main()
-                        except ValueError:
-                            print('Please enter a valid number')
+                        except Exception as e:
+                            print(str(e))
                             sleep(1.23234323424234252345234553452)
                             print()
                                  
@@ -69,8 +69,8 @@ def main():
                             sleep(1.5)
                             rerun()     
                             main()
-                        except ValueError:
-                            print('Please enter a valid number')
+                        except Exception as e:
+                            print(str(e))
                             sleep(1.23234323424234252345234553452)
                             print()
                                               
@@ -87,8 +87,8 @@ def main():
                             sleep(1.5)
                             rerun()
                             main()
-                        except ValueError:
-                            print('Please enter a valid number')
+                        except Exception as e:
+                            print(str(e))
                             sleep(1.23234323424234252345234553452)
                             print()
                                                  
@@ -105,8 +105,8 @@ def main():
                             sleep(1.5)
                             rerun() 
                             main()
-                        except ValueError:
-                            print('Please enter a valid number')
+                        except Exception as e:
+                            print(str(e))
                             sleep(1.23234323424234252345234553452)
                             print()
                     
@@ -122,15 +122,14 @@ def main():
                             sleep(1.5)
                             rerun()
                             main()
-                        except ValueError:
-                            print('Please enter a valid number')
+                        except Exception as e:
+                            print(str(e))
                             sleep(1.23234323424234252345234553452)
                             print()
                                 
                 if user == 6:
                     print('Thank you for using Math Helper... Goodbye')
-                    break
-                            
+                    break                            
             else:
                 print('Please enter a number 1->6')
         except Exception as e:
