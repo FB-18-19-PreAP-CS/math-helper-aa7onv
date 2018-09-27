@@ -37,64 +37,95 @@ def main():
             
             user = int(input('> '))
             if user in choices:
+
                 if user == 1:
-                    print('+ Pythagorean Theorem Selected +')
-                    a = float(input('Enter length of side 1: '))
-                    b = float(input('Enter length of side 2: '))
-                    print()
-                    print('The hypotenuse is {}'.format(pythag_ther(a,b)))
-                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                    sleep(1.5)
-                    rerun()
-                    main()
+                    while True:
+                        try:
+                            print('+ Pythagorean Theorem Selected +')                    
+                            a = float(input('Enter length of side 1: '))
+                            b = float(input('Enter length of side 2: '))
+                            print()
+                            print('The hypotenuse is {}'.format(pythag_ther(a,b)))
+                            print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                            sleep(1.5)
+                            rerun()
+                            main()
+                        except ValueError:
+                            print('Please enter a valid number')
+                            sleep(1.23234323424234252345234553452)
+                            print()
                                  
                 if user == 2:
-                    print('+ Slope Selected +')
-                    x1 = float(input('Enter first x-coordinate: '))
-                    y1 = float(input('Enter first y-coordinate: '))
-                    x2 = float(input('Enter second x-coordinate: '))
-                    y2 = float(input('Enter second y-coordinate: '))
-                    print()
-                    print('The slope is {}'.format(slope(x1,y1,x2,y2)))
-                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                    sleep(1.5)
-                    rerun()     
-                    main()
+                    while True:
+                        try:
+                            print('+ Slope Selected +')
+                            x1 = float(input('Enter first x-coordinate: '))
+                            y1 = float(input('Enter first y-coordinate: '))
+                            x2 = float(input('Enter second x-coordinate: '))
+                            y2 = float(input('Enter second y-coordinate: '))
+                            print()
+                            print('The slope is {}'.format(slope(x1,y1,x2,y2)))
+                            print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                            sleep(1.5)
+                            rerun()     
+                            main()
+                        except ValueError:
+                            print('Please enter a valid number')
+                            sleep(1.23234323424234252345234553452)
+                            print()
                                               
                 if user == 3:
-                    print('+ Arithmetic Sequence (last term) Selected +')
-                    a1 = float(input('Enter the first term in the sequence: '))
-                    d = float(input('Enter the common diffence: '))
-                    n = float(input('Enter the nth term you want: '))
-                    print()
-                    print('The last term is {}'.format(arithmetic(a1,d,n)))
-                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                    sleep(1.5)
-                    rerun()
-                    main()
+                    while True:
+                        try:
+                            print('+ Arithmetic Sequence (last term) Selected +')
+                            a1 = float(input('Enter the first term in the sequence: '))
+                            d = float(input('Enter the common diffence: '))
+                            n = float(input('Enter the nth term you want: '))
+                            print()
+                            print('The last term is {}'.format(arithmetic(a1,d,n)))
+                            print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                            sleep(1.5)
+                            rerun()
+                            main()
+                        except ValueError:
+                            print('Please enter a valid number')
+                            sleep(1.23234323424234252345234553452)
+                            print()
                                                  
                 if user == 4:
-                    print('+ Geometric Sum Selected +')
-                    a = float(input('Enter the first term in the sequence: '))
-                    r = float(input('Enter the common ratio: '))
-                    n = float(input('Enter the number of terms: '))
-                    print()
-                    print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
-                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                    sleep(1.5)
-                    rerun() 
-                    main()
+                    while True:
+                        try:
+                            print('+ Geometric Sum Selected +')
+                            a = float(input('Enter the first term in the sequence: '))
+                            r = float(input('Enter the common ratio: '))
+                            n = float(input('Enter the number of terms: '))
+                            print()
+                            print('The sum of the terms is {}'.format(sum_geometric(a,r,n)))
+                            print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                            sleep(1.5)
+                            rerun() 
+                            main()
+                        except ValueError:
+                            print('Please enter a valid number')
+                            sleep(1.23234323424234252345234553452)
+                            print()
                     
                 if user == 5:
-                    print('+ Area of a Sector Selected +')
-                    r = float(input('Enter the radius of the circle: '))
-                    a = float(input('Enter the angle in degrees: '))
-                    print()
-                    print('The area of the sector is {}'.format(area_of_sector(r,a)))
-                    print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
-                    sleep(1.5)
-                    rerun()
-                    main()
+                    while True:
+                        try:
+                            print('+ Area of a Sector Selected +')
+                            r = float(input('Enter the radius of the circle: '))
+                            a = float(input('Enter the angle in degrees: '))
+                            print()
+                            print('The area of the sector is {}'.format(area_of_sector(r,a)))
+                            print('≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡')
+                            sleep(1.5)
+                            rerun()
+                            main()
+                        except ValueError:
+                            print('Please enter a valid number')
+                            sleep(1.23234323424234252345234553452)
+                            print()
                                 
                 if user == 6:
                     print('Thank you for using Math Helper... Goodbye')
@@ -238,8 +269,8 @@ def area_of_sector(r,a):
     return round(ans,2)    
         
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
-    #main()
+    #import doctest
+    #doctest.testmod()
+    main()
 
 
